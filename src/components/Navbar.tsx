@@ -76,10 +76,12 @@ export default function Navbar({ currentPage = '' }: NavbarProps) {
   const navigateToPage = (page: string) => {
     if (page === 'home') {
       router.push('/');
-    } else if (page === 'trade') {
-      router.push('/trade');
-    } else if (page === 'swap') {
-      router.push('/swap');
+    } else if (page === 'cashflow') {
+      router.push('/market/cashflow');
+    } else if (page === 'buyStake') {
+      router.push('/market/buy-stake');
+    } else if (page === 'chain') {
+      router.push('/market/chain');
     } else if (page === 'contact') {
       if (window.location.pathname !== '/') {
         router.push('/');
@@ -180,24 +182,17 @@ export default function Navbar({ currentPage = '' }: NavbarProps) {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  const handleGetStarted = () => {
+    window.open('https://github.com/loka-network', '_blank');
+  };
+
   return (
     <>
       <nav className={`relative top-0 left-0 w-full h-[100px] bg-transparent z-[1000] flex items-center justify-start p-0 m-0 overflow-visible max-md:fixed max-md:h-20 max-md:bg-[#F6F5F1] max-md:shadow-[0_2px_8px_rgba(0,0,0,0.1)] ${isScrolled ? 'scrolled' : ''}`}>
         <div className="w-full h-full flex items-center justify-start relative z-[1001]">
-          <div className="flex items-center h-full w-full">
-            <div className="h-full flex items-center pl-[30px] bg-[#F6F5F1] min-w-[250px] flex-shrink-0 xl:min-w-[220px] xl:pl-[25px] lg:min-w-[200px] lg:pl-5 md:min-w-[180px] md:pl-[18px] sm:min-w-[160px] sm:pl-[15px] max-md:min-w-[140px] max-md:pl-[15px]">
-              <Image 
-                src="/home/homelogo.svg" 
-                alt="LOKA Logo" 
-                width={80}
-                height={80}
-                className="h-20 w-auto object-contain max-w-full xl:h-[70px] lg:h-[65px] md:h-[60px] sm:h-[55px] max-md:h-[55px]" 
-              />
-            </div>
-            
-
-            <div className="nav-trapezoid h-full bg-black flex-1 flex items-center justify-center relative z-10 min-w-0">
-              <div className="flex max-md:hidden items-center justify-center gap-5 h-full w-full px-10 flex-nowrap relative z-[1005] xl:gap-[15px] xl:px-[30px] lg:gap-3 lg:px-[25px] md:gap-2.5 md:px-5 sm:gap-2 sm:px-[15px]">
+          <div className="flex h-full w-full relative justify-between bg-black pr-10">
+            <div className="nav-trapezoid h-full flex-1 flex items-center justify-center relative z-10 min-w-0">
+              <div className="flex max-md:hidden items-center gap-5 h-full w-full px-10 flex-nowrap relative z-[1005] xl:gap-[60px] xl:px-[60px] lg:gap-3 lg:px-[69px] md:gap-2.5 md:px-5 sm:gap-2 sm:px-[15px]">
                 <div
                   className={`nav-button relative flex items-center justify-center cursor-pointer transition-all duration-300 h-[50px] min-w-[120px] max-w-[140px] px-[15px] hover:scale-105 xl:min-w-[110px] xl:max-w-[120px] xl:px-3 lg:min-w-[100px] lg:max-w-[110px] lg:h-[45px] lg:px-2.5 md:min-w-[90px] md:max-w-[100px] md:h-[42px] md:px-2 sm:min-w-20 sm:max-w-[90px] sm:h-10 sm:px-1.5 ${
                     currentPage === 'home' ? 'active' : ''
@@ -273,8 +268,36 @@ export default function Navbar({ currentPage = '' }: NavbarProps) {
                 </div>
               </div>
             </div>
+            <div className="absolute left-1/2 -translate-x-1/2 z-[1002] h-full flex items-center pl-[30px] bg-[#F6F5F1] min-w-[250px] flex-shrink-0 xl:min-w-[220px] xl:pl-[25px] lg:min-w-[200px] lg:pl-5 md:min-w-[180px] md:pl-[18px] sm:min-w-[160px] sm:pl-[15px] max-md:min-w-[140px] max-md:pl-[15px]">
+              <Image 
+                src="/home/homelogo.svg" 
+                alt="LOKA Logo" 
+                width={80}
+                height={80}
+                className="h-20 w-auto object-contain max-w-full xl:h-[70px] lg:h-[65px] md:h-[60px] sm:h-[55px] max-md:h-[55px]" 
+              />
+            </div>
+            <div className='items-center hidden md:flex'>
+              <div className="flex justify-end max-md:justify-center">
+                <div 
+                  className="bg-white text-black border-[3px] border-white rounded-none py-[10px] font-['Commit_Mono'] text-sm font-bold cursor-pointer transition-all duration-300 flex items-center justify-center min-w-[160px] uppercase tracking-wide shadow-[8px_8px_0px_#000000] hover:bg-black hover:text-[#F2F1EF] hover:-translate-y-0.5 max-md:py-3.5 max-md:px-6 max-md:text-base max-md:min-w-[180px] max-sm:py-[0.875rem] max-sm:px-6 max-sm:text-base max-sm:min-w-[180px] max-[360px]:py-[0.7rem] max-[360px]:px-4 max-[360px]:text-[0.85rem] max-[360px]:min-w-[140px]"
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Get Started"
+                  onClick={handleGetStarted}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleGetStarted();
+                    }
+                  }}
+                >
+                  <span>Get Started</span>
+                </div>
+              </div>
+            </div>
           </div>
-
+          {/* Mobile Menu Button */}
           <div
             className={`md:hidden flex flex-col cursor-pointer absolute right-5 top-1/2 -translate-y-1/2 z-[1001] bg-black/80 p-2 rounded transition-all duration-300 hover:bg-black hover:scale-105 ${
               isMobileMenuActive ? 'hamburger-active' : ''
@@ -385,18 +408,26 @@ export default function Navbar({ currentPage = '' }: NavbarProps) {
       >
         <div 
           className="dropdown-item p-[18px_20px] cursor-pointer transition-all duration-300 border-b border-white/10 h-[52px] flex items-center justify-center relative mb-2 rounded overflow-hidden hover:bg-transparent hover:translate-x-[5px] hover:border hover:border-white/20"
-          onClick={() => handleDropdownItemClick('trade')}
+          onClick={() => handleDropdownItemClick('cashflow')}
         >
           <span className="text-[#F6F5F1] font-['Commit_Mono'] text-sm font-medium uppercase tracking-[0.5px] whitespace-nowrap leading-none relative z-[1] transition-all duration-300 hover:text-black hover:scale-105">
-            PLATFORM
+            CASHFLOW FINANCING
           </span>
         </div>
         <div 
           className="dropdown-item p-[18px_20px] cursor-pointer transition-all duration-300 h-[52px] flex items-center justify-center relative mb-0 rounded overflow-hidden hover:bg-transparent hover:translate-x-[5px] hover:border hover:border-white/20"
-          onClick={() => handleDropdownItemClick('swap')}
+          onClick={() => handleDropdownItemClick('buyStake')}
         >
           <span className="text-[#F6F5F1] font-['Commit_Mono'] text-sm font-medium uppercase tracking-[0.5px] whitespace-nowrap leading-none relative z-[1] transition-all duration-300 hover:text-black hover:scale-105">
-            SWAP
+            BUY/STAKE
+          </span>
+        </div>
+                <div 
+          className="dropdown-item p-[18px_20px] cursor-pointer transition-all duration-300 h-[52px] flex items-center justify-center relative mb-0 rounded overflow-hidden hover:bg-transparent hover:translate-x-[5px] hover:border hover:border-white/20"
+          onClick={() => handleDropdownItemClick('chain')}
+        >
+          <span className="text-[#F6F5F1] font-['Commit_Mono'] text-sm font-medium uppercase tracking-[0.5px] whitespace-nowrap leading-none relative z-[1] transition-all duration-300 hover:text-black hover:scale-105">
+            CHAIN
           </span>
         </div>
       </div>
