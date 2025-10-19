@@ -10,46 +10,46 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-black relative overflow-hidden mb-20 max-md:mb-10 max-md:min-h-0 max-md:pt-5">
-      <div className="absolute top-0 left-0 right-0 bottom-0 z-0 bg-[#F2F1EF]" />
+    <section id="home" className="min-h-screen flex flex-col items-center text-black relative overflow-hidden mb-20 max-md:mb-10 max-md:min-h-0 max-md:pt-5">
+      <div className="absolute top-0 left-0 right-0 bottom-0 z-0 bg-[url(/bg.png)] bg-cover" />
 
       <div className="w-full max-w-[1400px] mx-auto px-8 py-12 flex flex-row items-stretch relative z-[1] min-h-[80vh] max-md:flex-col max-md:min-h-0 max-md:gap-0 max-md:px-4 max-md:py-8 max-sm:px-3">
-        <div className="flex-[0_0_40%] flex flex-col justify-start items-end px-12 pt-24 pb-8 bg-[rgba(242,241,239,0.95)] backdrop-blur-[10px] min-w-0 text-right max-md:flex-none max-md:px-4 max-md:pt-16 max-md:pb-6 max-md:border-r-0 max-md:border-b max-md:border-b-black/10 max-md:items-center max-md:text-center">
+        <div className="flex-[0_0_40%] flex flex-col justify-start items-end px-12 pt-24 pb-8 min-w-0 text-right max-md:flex-none max-md:px-4 max-md:pt-16 max-md:pb-6 max-md:border-r-0 max-md:border-b max-md:border-b-black/10 max-md:items-center max-md:text-center">
           <div className="mb-6 text-right max-md:text-center max-md:mb-4">
-            <h1 className="font-['42dot_Sans'] text-2xl font-extrabold m-0 mb-2 leading-tight text-black max-md:text-[28px] max-sm:text-2xl max-[360px]:text-xl">
+            <h1 className="font-['42dot_Sans'] text-2xl font-extrabold m-0 mb-2 leading-tight text-white max-md:text-[28px] max-sm:text-2xl max-[360px]:text-xl">
               LOKA: The AI-Native Finance Layer
             </h1>
-            <p className="font-['Commit_Mono'] text-lg leading-relaxed text-black text-right font-normal m-0 max-md:text-base max-md:text-center max-sm:text-sm max-[360px]:text-[13px]">
-              <strong className="font-bold text-black">AI + RWA + Stablecoin + Cashflow Financing</strong>
+            <p className="font-['Commit_Mono'] text-lg leading-relaxed text-white text-right font-normal m-0 max-md:text-base max-md:text-center max-sm:text-sm max-[360px]:text-[13px]">
+              <strong className="font-bold">AI + RWA + Stablecoin + Cashflow Financing</strong>
             </p>
           </div>
 
           <div className="flex flex-col gap-3 my-6 mb-8 items-end max-md:gap-2 max-md:my-4 max-md:mb-6 max-md:items-center max-sm:gap-3 max-sm:my-4 max-sm:mb-6 max-[360px]:gap-2 max-[360px]:my-3 max-[360px]:mb-5">
             <div className="grid grid-cols-[120px_1fr] items-baseline gap-4 text-right w-full max-w-[500px] max-md:max-w-full max-sm:gap-3 max-sm:grid-cols-[100px_1fr] max-[360px]:gap-2 max-[360px]:grid-cols-[80px_1fr]">
-              <span className="font-['42dot_Sans'] text-[2rem] font-black text-black leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">4-8%</span>
-              <span className="font-['Commit_Mono'] text-[0.85rem] text-[#666666] font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">YIELD</span>
+              <span className="font-['42dot_Sans'] text-[2rem] font-black text-white leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">4-8%</span>
+              <span className="font-['Commit_Mono'] text-[0.85rem] text-white font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">YIELD</span>
             </div>
             <div className="grid grid-cols-[120px_1fr] items-baseline gap-4 text-right w-full max-w-[500px] max-md:max-w-full max-sm:gap-3 max-sm:grid-cols-[100px_1fr] max-[360px]:gap-2 max-[360px]:grid-cols-[80px_1fr]">
-              <span className="font-['42dot_Sans'] text-[2rem] font-black text-black leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">$300M</span>
-              <span className="font-['Commit_Mono'] text-[0.85rem] text-[#666666] font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">TVL</span>
+              <span className="font-['42dot_Sans'] text-[2rem] font-black text-white leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">$300M</span>
+              <span className="font-['Commit_Mono'] text-[0.85rem] text-white font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">TVL</span>
             </div>
             <div className="grid grid-cols-[120px_1fr] items-baseline gap-4 text-right w-full max-w-[500px] max-md:max-w-full max-sm:gap-3 max-sm:grid-cols-[100px_1fr] max-[360px]:gap-2 max-[360px]:grid-cols-[80px_1fr]">
-              <span className="font-['42dot_Sans'] text-[2rem] font-black text-black leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">300K</span>
-              <span className="font-['Commit_Mono'] text-[0.85rem] text-[#666666] font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">TPS</span>
+              <span className="font-['42dot_Sans'] text-[2rem] font-black text-white leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">300K</span>
+              <span className="font-['Commit_Mono'] text-[0.85rem] text-white font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">TPS</span>
             </div>
             <div className="grid grid-cols-[120px_1fr] items-baseline gap-4 text-right w-full max-w-[500px] max-md:max-w-full max-sm:gap-3 max-sm:grid-cols-[100px_1fr] max-[360px]:gap-2 max-[360px]:grid-cols-[80px_1fr]">
-              <span className="font-['42dot_Sans'] text-[2rem] font-black text-black leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">1,200+</span>
-              <span className="font-['Commit_Mono'] text-[0.85rem] text-[#666666] font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">AI AGENTS</span>
+              <span className="font-['42dot_Sans'] text-[2rem] font-black text-white leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">1,200+</span>
+              <span className="font-['Commit_Mono'] text-[0.85rem] text-white font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">AI AGENTS</span>
             </div>
             <div className="grid grid-cols-[120px_1fr] items-baseline gap-4 text-right w-full max-w-[500px] max-md:max-w-full max-sm:gap-3 max-sm:grid-cols-[100px_1fr] max-[360px]:gap-2 max-[360px]:grid-cols-[80px_1fr]">
-              <span className="font-['42dot_Sans'] text-[2rem] font-black text-black leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">0.05%</span>
-              <span className="font-['Commit_Mono'] text-[0.85rem] text-[#666666] font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">FEE</span>
+              <span className="font-['42dot_Sans'] text-[2rem] font-black text-white leading-none text-right whitespace-nowrap max-md:text-[1.75rem] max-sm:text-2xl max-[360px]:text-xl">0.05%</span>
+              <span className="font-['Commit_Mono'] text-[0.85rem] text-white font-medium tracking-wide text-left leading-snug uppercase max-md:text-[0.8rem] max-sm:text-xs max-[360px]:text-[0.7rem]">FEE</span>
             </div>
           </div>
 
-          <div className="flex justify-end mt-4 max-md:justify-center">
+          <div className="hidden max-md:flex justify-end mt-4 max-md:justify-center">
             <div 
-              className="bg-white text-black border-[3px] border-black rounded-none py-[15px] px-[30px] font-['Commit_Mono'] text-sm font-bold cursor-pointer transition-all duration-300 flex items-center justify-center min-w-[200px] uppercase tracking-wide shadow-[8px_8px_0px_#000000] hover:bg-black hover:text-[#F2F1EF] hover:-translate-y-0.5 max-md:py-3.5 max-md:px-6 max-md:text-base max-md:min-w-[180px] max-sm:py-[0.875rem] max-sm:px-6 max-sm:text-base max-sm:min-w-[180px] max-[360px]:py-[0.7rem] max-[360px]:px-4 max-[360px]:text-[0.85rem] max-[360px]:min-w-[140px]"
+              className="bg-white text-black border-[3px] border-white rounded-none py-[15px] px-[30px] font-['Commit_Mono'] text-sm font-bold cursor-pointer transition-all duration-300 flex items-center justify-center min-w-[200px] uppercase tracking-wide shadow-[8px_8px_0px_#000000] hover:bg-black hover:text-[#F2F1EF] hover:-translate-y-0.5 max-md:py-3.5 max-md:px-6 max-md:text-base max-md:min-w-[180px] max-sm:py-[0.875rem] max-sm:px-6 max-sm:text-base max-sm:min-w-[180px] max-[360px]:py-[0.7rem] max-[360px]:px-4 max-[360px]:text-[0.85rem] max-[360px]:min-w-[140px]"
               role="button"
               tabIndex={0}
               aria-label="Get Started"
@@ -66,9 +66,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex-[0_0_60%] flex items-center justify-center relative bg-transparent min-w-0 max-md:flex-none max-md:h-[250px] max-md:p-4 max-sm:h-[200px]">
+        {/* earth  */}
+        {/* <div className="flex-[0_0_60%] flex items-center justify-center relative bg-transparent min-w-0 max-md:flex-none max-md:h-[250px] max-md:p-4 max-sm:h-[200px]">
           <GlobeEffect />
-        </div>
+        </div> */}
       </div>
 
       <div className="max-w-[1200px] mx-auto py-8 px-5 w-full max-md:py-4 max-md:px-4">
